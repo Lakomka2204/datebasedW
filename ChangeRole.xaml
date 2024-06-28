@@ -1,0 +1,47 @@
+﻿<Window x:Class="datebasedW.ChangeRole"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:datebasedW"
+        mc:Ignorable="d"
+        Background="#333"
+        FontFamily="Calibri" FontSize="24"
+        Title="Change Role" Height="150"
+        Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Viewbox HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="5" StretchDirection="DownOnly">
+            <TextBlock Text="Change {username}'s {role} role to" Foreground="#ccc" x:Name="lb_cu"/>
+        </Viewbox>
+        <ComboBox x:Name="cb_newrole"
+                      Visibility="Visible" HorizontalAlignment="Stretch" VerticalAlignment="Center"
+                        Margin="5" BorderBrush="#111" Foreground="#ccc"
+                      Style="{StaticResource {x:Static ToolBar.ComboBoxStyleKey}}"
+                        FontSize="16" Background="#333">
+
+            <ComboBox.ItemContainerStyle>
+                <Style TargetType="ComboBoxItem">
+                    <Setter Property="Background" Value="#333"/>
+                    <Setter Property="BorderBrush" Value="#333"/>
+                </Style>
+            </ComboBox.ItemContainerStyle>
+            <ComboBox.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </ComboBox.Resources>
+
+        </ComboBox>
+        <Button x:Name="bt_change" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                MinHeight="20" MinWidth="50"
+                        Margin="5,4" Content="Change" BorderBrush="#111" Foreground="#ccc"
+                        FontSize="12" Background="#333" Click="bt_search_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+    </Grid>
+</Window>

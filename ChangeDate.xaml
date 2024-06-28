@@ -1,0 +1,35 @@
+﻿<Window x:Class="datebasedW.ChangeDate"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:datebasedW"
+        mc:Ignorable="d"
+        Background="#333"
+        FontFamily="Calibri" FontSize="24"
+        Title="Change Date" Height="150"
+        Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Viewbox HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="5" StretchDirection="DownOnly">
+            <TextBlock Text="Change {username}'s creation date to" Foreground="#ccc" x:Name="lb_cu"/>
+        </Viewbox>
+        <DatePicker x:Name="dt_date" Background="#444" VerticalAlignment="Center" Foreground="#bbb" Margin="5" IsDropDownOpen="True" SelectedDateFormat="Short">
+            <DatePicker.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="3"/>
+                </Style>
+            </DatePicker.Resources>
+        </DatePicker>
+        <Button x:Name="bt_search" HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                MinHeight="20" MinWidth="50"
+                        Margin="5,4" Content="Change" BorderBrush="#111" Foreground="#ccc"
+                        FontSize="12" Background="#333" Click="bt_search_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+    </Grid>
+</Window>

@@ -1,0 +1,139 @@
+﻿<Page x:Class="datebasedW.SettingsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:datebasedW"
+      mc:Ignorable="d" 
+      FontFamily="Calibri" FontSize="24"
+      d:DesignHeight="400" d:DesignWidth="500"
+      Title="SettingsPage">
+
+    <Grid Background="#222">
+        <TextBlock Text="Account info" FontSize="36" Foreground="#ccc" HorizontalAlignment="Left"
+                   VerticalAlignment="Top" Margin="15,10"/>
+        <ScrollViewer Margin="0,55,0,100" HorizontalAlignment="Stretch" VerticalAlignment="Top" HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto" CanContentScroll="True">
+
+            <StackPanel >
+                <Viewbox Margin="10,5" StretchDirection="DownOnly" HorizontalAlignment="Left">
+                    <TextBlock x:Name="tb_id" Text="ID: {id}" Foreground="#ccc"/>
+                </Viewbox>
+                <Viewbox Margin="10,5" StretchDirection="DownOnly" HorizontalAlignment="Left">
+                    <TextBlock x:Name="tb_username" Text="Username: {username}" Foreground="#ccc"/>
+                </Viewbox>
+                <Viewbox Margin="10,5" StretchDirection="DownOnly" HorizontalAlignment="Left">
+                    <TextBlock Foreground="#ccc">
+                        Password: <Button x:Name="bt_showpass" Margin="5,0,0,0"
+                        Content="Show" BorderBrush="#111" Foreground="#ccc"
+                        FontSize="16" Background="#333" Click="bt_showpass_Click">
+            <Button.Resources>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Button.Resources>
+        </Button>
+
+                    </TextBlock>
+                </Viewbox>
+                <Viewbox Margin="10,5" StretchDirection="DownOnly" HorizontalAlignment="Left">
+                    <TextBlock x:Name="tb_createdat" Text="Creation date: {cdate}" Foreground="#ccc"/>
+                </Viewbox>
+                <Viewbox Margin="10,5" StretchDirection="DownOnly" HorizontalAlignment="Left">
+                    <TextBlock x:Name="tb_state" Text="Account state: {state}" Foreground="#ccc"/>
+                </Viewbox>
+                <Viewbox Margin="10,5" StretchDirection="DownOnly" HorizontalAlignment="Left">
+                    <TextBlock x:Name="tb_role" Text="Account role: {role}" Foreground="#ccc"/>
+                </Viewbox>
+                <Viewbox Margin="10,5" StretchDirection="DownOnly" HorizontalAlignment="Left">
+                    <TextBlock x:Name="tb_posts" Text="Made posts: {mposts}" Foreground="#ccc"/>
+                </Viewbox>
+                <Viewbox Margin="10,5" StretchDirection="DownOnly" HorizontalAlignment="Left">
+                    <TextBlock x:Name="tb_comments" Text="Made comments: {mcomms}" Foreground="#ccc"/>
+                </Viewbox>
+            </StackPanel>
+        </ScrollViewer >
+        <Grid Margin="0,300,0,0" Background="#111" MinHeight="100" VerticalAlignment="Bottom" HorizontalAlignment="Stretch">
+            <Button x:Name="bt_changeusername" Content="Change username" BorderBrush="#111" Foreground="#ccc"
+                    HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5"
+                        FontSize="16" Background="#333" Click="bt_changeusername_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="bt_changepass" Content="Change password" BorderBrush="#111" Foreground="#ccc"
+                HorizontalAlignment="Left" VerticalAlignment="Top" Margin="131,5,0,0"
+                FontSize="16" Background="#333" Click="bt_changepass_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="bt_delaccount" Content="Delete account" BorderBrush="#FF551111" Foreground="#ccc"
+                HorizontalAlignment="Left" VerticalAlignment="Center" Margin="5,0,0,0"
+                FontSize="16" Background="#FFCC2222" Click="bt_delaccount_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="bt_delposts" Content="Delete all posts" BorderBrush="#FF551111" Foreground="#ccc"
+                HorizontalAlignment="Left" VerticalAlignment="Center" Margin="112,0,0,0"
+                FontSize="16" Background="#FFCC2222" Click="bt_delposts_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="bt_delcomms" Content="Delete all comments" BorderBrush="#511" Foreground="#ccc"
+                HorizontalAlignment="Left" VerticalAlignment="Center" Margin="220,0,0,0"
+                FontSize="16" Background="#c22" Click="bt_delcomms_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="bt_setrole" Content="Set role" BorderBrush="#111" Foreground="#ccc"
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="5"
+                FontSize="16" Background="#333" Click="bt_setrole_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="bt_setdate" Content="Set date" BorderBrush="#111" Foreground="#ccc"
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="64,0,0,5"
+                FontSize="16" Background="#333" Click="bt_setdate_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="bt_truedelete" Content="Truly delete account" BorderBrush="#511" Foreground="#ccc"
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="173,0,0,5"
+                FontSize="16" Background="#c22" Click="bt_truedelete_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+            <Button x:Name="bt_setid" Content="Set ID" BorderBrush="#111" Foreground="#ccc"
+                HorizontalAlignment="Left" VerticalAlignment="Bottom" Margin="126,0,0,5"
+                FontSize="16" Background="#333" Click="bt_setid_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="5"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+        </Grid>
+    </Grid>
+</Page>
